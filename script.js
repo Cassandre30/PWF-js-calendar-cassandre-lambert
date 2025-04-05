@@ -29,3 +29,22 @@
         document.getElementById('partie-1').innerHTML = table;
     }
     generateMultiLineTable();
+// Partie 2
+    function generateJanuaryCalendar() {
+        let max_days_january = 31;
+        let current_day = 1;
+        let table = '<table>';
+        for (let i = 0; i < 5; i++) {
+            table += '<tr>';
+            for (let j = 0; j < 7; j++) {
+                if (current_day <= max_days_january) {
+                    table += '<td>' + current_day + '</td>';
+                    current_day++;
+                }
+            }
+            table += '</tr>';
+        }
+        table += '</table>';
+        document.getElementById('partie-2').innerHTML = table;
+    }
+    generateJanuaryCalendar();
