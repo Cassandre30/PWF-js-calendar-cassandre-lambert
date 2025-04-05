@@ -66,3 +66,23 @@
         document.getElementById('partie-2').innerHTML = table;
     }
     generateJanuaryCalendar();
+    // Partie 4
+    function generateAllMonths() {
+        const month_names = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+        const month_max_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        let all_months_html = '';
+        for (let i = 0; i < month_max_days.length; i += 3) {
+            all_months_html += '<div style="display: flex; justify-content: space-between; margin-bottom: 20px;">';
+            for (let j = 0; j < 3; j++) {
+                if (i + j < month_max_days.length) {
+                    all_months_html += '<div style="flex: 1; margin-right: 10px;">';
+                    all_months_html += '<h3>' + month_names[i + j] + '</h3>';
+                    all_months_html += print_table_month(month_max_days[i + j]);
+                    all_months_html += '</div>';
+                }
+            }
+            all_months_html += '</div>';
+        }
+        document.getElementById('partie-4').innerHTML = all_months_html;
+    }
+    generateAllMonths();
