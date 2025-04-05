@@ -14,3 +14,18 @@
         document.getElementById('partie-0').innerHTML = table;
     }
     generateJanuaryTable();
+// Partie 1
+    function generateMultiLineTable() {
+        let max_col = 7, max_line = 5;
+        let table = '<table>';
+        for (let i = 0; i < max_line; i++) {
+            table += '<tr>';
+            for (let j = 0; j < max_col; j++) {
+                table += '<td>' + (i * max_col + j + 1) + '</td>';
+            }
+            table += '</tr>';
+        }
+        table += '</table>';
+        document.getElementById('partie-1').innerHTML = table;
+    }
+    generateMultiLineTable();
