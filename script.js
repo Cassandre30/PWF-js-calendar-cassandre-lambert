@@ -44,6 +44,24 @@
             }
             table += '</tr>';
         }
+            // Partie 3
+    function print_table_month(max_days) {
+        let current_day = 1;
+        let table = '<table>';
+        for (let i = 0; i < Math.ceil(max_days / 7); i++) {
+            table += '<tr>';
+            for (let j = 0; j < 7; j++) {
+                if (current_day <= max_days) {
+                    table += '<td>' + current_day + '</td>';
+                    current_day++;
+                }
+            }
+            table += '</tr>';
+        }
+        table += '</table>';
+        return table;
+    }
+    document.getElementById('partie-3').innerHTML = print_table_month(29);
         table += '</table>';
         document.getElementById('partie-2').innerHTML = table;
     }
